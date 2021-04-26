@@ -12,7 +12,7 @@ function App() {
   const [intento, setIntento] = useState(0);
   const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-  async function listardatos() {
+  const listardatos = async () => {
     try {
       const { data } = await baseURL.get(`/categorias`);
       if (data.length > 0) {
@@ -23,7 +23,7 @@ function App() {
     }
   }
 
-  async function filtrarPalabras(id) {
+  const filtrarPalabras = async (id) => {
     try {
       const { data } = await baseURL.get(`/palabrasByCategoria/${id}`);
       if (data.length > 0) {
